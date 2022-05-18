@@ -48,9 +48,9 @@ namespace Lab5
             string fromitem;
             string toitem;
 
-            if(ConvertfromCB.SelectedItem == "")
+            if(ConvertfromCB.SelectedItem == null || ConvertinCB.SelectedItem == null)
             {
-                MessageBox.Show("Заполните первое поле для конвертации");
+                MessageBox.Show("Выберите обе валюты из списка, и повторите попытку");
             }
             else
             {

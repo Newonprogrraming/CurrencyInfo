@@ -76,9 +76,9 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
 
-                            <TextBox x:Name="fromcurrencytb" Grid.Row="0" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Stretch" FontWeight="Bold" Background="#FF824A80" BorderBrush="White" Text="1"></TextBox>
-                            <TextBox x:Name="incurrencytb" Grid.Row="1" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Stretch" FontWeight="Bold" Background="#FF824A80" BorderBrush="White"></TextBox>
-                            <ComboBox x:Name="ConvertfromCB" Grid.Column="1" Background="#FF824A80" BorderBrush="#89EAE4E4" Foreground="#FFFDFDFD" IsReadOnly="True">
+                            <TextBox x:Name="fromcurrencytb" Grid.Row="0" Margin="5" materialDesign:HintAssist.Hint="Конвертировать" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Stretch" FontWeight="Bold" Background="#FF824A80" BorderBrush="White" Text="1"></TextBox>
+                            <TextBox x:Name="incurrencytb" Grid.Row="1" Margin="5" materialDesign:HintAssist.Hint="Итог" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Stretch" FontWeight="Bold" Background="#FF824A80" BorderBrush="White"></TextBox>
+                            <ComboBox x:Name="ConvertfromCB" Grid.Column="1" Background="#FF824A80" BorderBrush="#89EAE4E4" Foreground="#FFFDFDFD" IsReadOnly="True" Margin="0,16,0,0">
                                 <ComboBoxItem  Background="#FF824A80" Content="BTC"/>
                                 <ComboBoxItem  Background="#FF824A80" Content="ETH"/>
                                 <ComboBoxItem  Background="#FF824A80" Content="BNB"/>
@@ -86,7 +86,7 @@
                                 <ComboBoxItem  Background="#FF824A80" Content="DOGE"/>
                             </ComboBox>
 
-                            <ComboBox x:Name="ConvertinCB" Grid.Column="1" Grid.Row="1" Background="#FF824A80" BorderBrush="#89EAE4E4" Foreground="#FFFDFDFD" IsReadOnly="True">
+                            <ComboBox x:Name="ConvertinCB" Grid.Column="1" Grid.Row="1" Background="#FF824A80" BorderBrush="#89EAE4E4" Foreground="#FFFDFDFD" IsReadOnly="True" Margin="0,16,0,0">
                                 <ComboBoxItem  Background="#FF824A80" Content="BTC"/>
                                 <ComboBoxItem  Background="#FF824A80" Content="ETH"/>
                                 <ComboBoxItem  Background="#FF824A80" Content="BNB"/>

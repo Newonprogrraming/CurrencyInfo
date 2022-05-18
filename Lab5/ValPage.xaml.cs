@@ -28,9 +28,13 @@ namespace Lab5
             InitializeComponent();
             this.fromcurrencytb.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
             this.incurrencytb.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
+            var curr = JsonConvert.DeserializeObject<Currencyinfo>(File.ReadAllText("currency.json"));
+            string currencyinfo = Convert.ToString(curr.Currency);
 
-
+            get(currencyinfo);
         }
+        
+             
 
         void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -62,11 +66,11 @@ namespace Lab5
                 string cny = (string)quotes1.RUBCNY;
                 string jpy = (string)quotes1.RUBJPY;
                 string rub = (string)quotes1.RUBRUB;
-                usdtb.Text = usd;
-                eurtb.Text = eur;
-                cnytb.Text = cny;
-                jpytb.Text = jpy;
-                rubtb.Text = rub;
+                usdtb.Text = usd + " RUB";
+                eurtb.Text = eur + " RUB";
+                cnytb.Text = cny + " RUB";
+                jpytb.Text = jpy + " RUB";
+                rubtb.Text = rub + " RUB";
             }
             else if (source == "USD")
             {
@@ -75,11 +79,11 @@ namespace Lab5
                 string cny = (string)quotes1.USDCNY;
                 string jpy = (string)quotes1.USDJPY;
                 string rub = (string)quotes1.USDRUB;
-                usdtb.Text = usd;
-                eurtb.Text = eur;
-                cnytb.Text = cny;
-                jpytb.Text = jpy;
-                rubtb.Text = rub;
+                usdtb.Text = usd + " USD";
+                eurtb.Text = eur + " USD";
+                cnytb.Text = cny + " USD";
+                jpytb.Text = jpy + " USD";
+                rubtb.Text = rub + " USD";
             }
             
         }
@@ -119,9 +123,9 @@ namespace Lab5
             string fromitem;
             string toitem;
 
-            if (ConvertfromCB.SelectedItem == "")
+            if (ConvertfromCB.SelectedItem == null || ConvertinCB.SelectedItem == null)
             {
-                MessageBox.Show("Заполните первое поле для конвертации");
+                MessageBox.Show("Выберите обе валюты из списка, и повторите попытку");
             }
             else
             {
