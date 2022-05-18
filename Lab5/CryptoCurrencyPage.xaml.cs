@@ -28,6 +28,9 @@ namespace Lab5
             InitializeComponent();
             this.fromcurrencytb.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
             this.incurrencytb.PreviewTextInput += new TextCompositionEventHandler(textBox_PreviewTextInput);
+            var curr = JsonConvert.DeserializeObject<Currencyinfo>(File.ReadAllText("currency.json"));
+            string currencyinfo = Convert.ToString(curr.Currency);
+            get(currencyinfo);
         }
 
         void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
