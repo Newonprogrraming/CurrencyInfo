@@ -1,0 +1,111 @@
+﻿<Page x:Class="Lab5.CryptoCurrencyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      xmlns:local="clr-namespace:Lab5"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CryptoCurrencyPage">
+
+    <Grid>
+        <materialDesign:Card Padding="20" Margin="5" Background="#FF29244C" UniformCornerRadius="20" HorizontalAlignment="Stretch">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="180*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="TitleTB" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="30" Foreground="#DDFFFFFF" FontWeight="Bold">Криптовалютный курс</TextBlock>
+
+                <materialDesign:Card Grid.Column="0" Grid.Row="1" Margin="0,0,5,0" Padding="20" Background="#FF824A80" UniformCornerRadius="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Margin="0,0,0,5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="20" Foreground="#DDFFFFFF" HorizontalAlignment="Center">Список криптовалют</TextBlock>
+
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Left" FontWeight="Bold">Bitcoin</TextBlock>
+                            <TextBlock Grid.Row="1" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Left" FontWeight="Bold">Ethereum</TextBlock>
+                            <TextBlock Grid.Row="2" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Left" FontWeight="Bold">BNB</TextBlock>
+                            <TextBlock Grid.Row="3" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Left" FontWeight="Bold">USDT</TextBlock>
+                            <TextBlock Grid.Row="4" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Left" FontWeight="Bold">Dogecoin</TextBlock>
+
+                            <TextBlock x:Name="btctb"  Grid.Column="1" Grid.Row="0" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Left" FontWeight="Bold">...</TextBlock>
+                            <TextBlock x:Name="ethtb" Grid.Column="1" Grid.Row="1" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Left" FontWeight="Bold">...</TextBlock>
+                            <TextBlock x:Name="bnbtb" Grid.Column="1" Grid.Row="2" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Left" FontWeight="Bold">...</TextBlock>
+                            <TextBlock x:Name="usdttb" Grid.Column="1" Grid.Row="3" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Left" FontWeight="Bold">...</TextBlock>
+                            <TextBlock x:Name="dogetb"  Grid.Column="1" Grid.Row="4" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Left" FontWeight="Bold">...</TextBlock>
+
+                        </Grid>
+                        <Button x:Name="CryptoCurreBtn" Margin="0,30,0,0" Background="{x:Null}" BorderBrush="#FFFFFFFF" HorizontalAlignment="Center" Click="CryptoCurreBtn_Click" >Обновить</Button>
+                    </StackPanel>
+
+
+
+                </materialDesign:Card>
+                <materialDesign:Card Grid.Column="1" Grid.Row="1" Margin="5,0,0,0"  Padding="20" Background="#FF824A80" UniformCornerRadius="20" HorizontalAlignment="Stretch">
+                    <StackPanel>
+                        <TextBlock Margin="0,0,0,5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="20" Foreground="#DDFFFFFF" HorizontalAlignment="Center">Конвертер криптовалют</TextBlock>
+
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <TextBox x:Name="fromcurrencytb" Grid.Row="0" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Stretch" FontWeight="Bold" Background="#FF824A80" BorderBrush="White" Text="1"></TextBox>
+                            <TextBox x:Name="incurrencytb" Grid.Row="1" Margin="5" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="15" Foreground="#DDFFFFFF" HorizontalAlignment="Stretch" FontWeight="Bold" Background="#FF824A80" BorderBrush="White"></TextBox>
+                            <ComboBox x:Name="ConvertfromCB" Grid.Column="1" Background="#FF824A80" BorderBrush="#89EAE4E4" Foreground="#FFFDFDFD" IsReadOnly="True">
+                                <ComboBoxItem  Background="#FF824A80" Content="BTC"/>
+                                <ComboBoxItem  Background="#FF824A80" Content="ETH"/>
+                                <ComboBoxItem  Background="#FF824A80" Content="BNB"/>
+                                <ComboBoxItem  Background="#FF824A80" Content="USDT"/>
+                                <ComboBoxItem  Background="#FF824A80" Content="DOGE"/>
+                            </ComboBox>
+
+                            <ComboBox x:Name="ConvertinCB" Grid.Column="1" Grid.Row="1" Background="#FF824A80" BorderBrush="#89EAE4E4" Foreground="#FFFDFDFD" IsReadOnly="True">
+                                <ComboBoxItem  Background="#FF824A80" Content="BTC"/>
+                                <ComboBoxItem  Background="#FF824A80" Content="ETH"/>
+                                <ComboBoxItem  Background="#FF824A80" Content="BNB"/>
+                                <ComboBoxItem  Background="#FF824A80" Content="USDT"/>
+                                <ComboBoxItem  Background="#FF824A80" Content="DOGE"/>
+                            </ComboBox>
+
+                        </Grid>
+
+                        <Button x:Name="CryprtoConvertBtn" Margin="0,30,0,0" Background="{x:Null}" BorderBrush="#FFFFFFFF" HorizontalAlignment="Center" Click="CryprtoConvertBtn_Click" >Конвертировать</Button>
+                    </StackPanel>
+
+
+
+                </materialDesign:Card>
+
+            </Grid>
+
+        </materialDesign:Card>
+
+    </Grid>
+</Page>
